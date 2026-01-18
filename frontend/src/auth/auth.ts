@@ -15,6 +15,18 @@ export const getUserRole = (): "admin" | "user" => {
   const token = localStorage.getItem("token");
   if (!token) return "user";
 
-  const payload = JSON.parse(atob(token.split(".")[1]));
+  const payload = JSON.parse(atob(token.split(".")[1])); // atob -> async to binary
   return payload.role === "admin" ? "admin" : "user";
 };
+
+
+
+
+// Example:
+
+// atob("eyJyb2xlIjoiYWRtaW4ifQ==")
+
+
+// Output:
+
+// {"role":"admin"}

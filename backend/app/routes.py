@@ -103,7 +103,6 @@ def my_feedback(db:Session=Depends(get_db),user= Depends(get_current_user)):
 
 
 @router.get("/all-feedback")
-
 def all_feedback(
     db: Session = Depends(get_db),
     admin = Depends(admin_only)
